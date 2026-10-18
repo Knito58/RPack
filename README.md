@@ -15,7 +15,7 @@ Requires **Fabric API**. Builds for Minecraft **26.2** and **26.3**.
 - 4 quartz from 1 quartz block, 4 clay balls from 1 clay block
 - 4 string from 1 wool, 4 leather from 1 saddle
 - Chainmail helmet, chestplate, leggings and boots from iron chains
-- Elytra (paper + gold ingot), spawner (iron bars), lodestone (stone + quartz)
+- Spawner (iron bars), lodestone (stone + quartz)
 - Grass block, mycelium, podzol, crimson and warped nylium
 - Dispenser from dropper + bow, coal block from 9 charcoal
 - 4 cobwebs from 4 string + slimeball, slime spawn egg from warped roots + egg
@@ -30,14 +30,18 @@ Requires **Fabric API**. Builds for Minecraft **26.2** and **26.3**.
 
 **Furnace and blast furnace**
 
-- Iron and gold sword, helmet, chestplate, leggings and boots back to 2/5/8/7/4 ingots
+- Iron and gold tools, weapons and armor give back the ingots they cost:
+  sword 2, pickaxe 3, axe 3, hoe 2, shovel 1, spear 1,
+  helmet 5, chestplate 8, leggings 7, boots 4
+- Chainmail armor gives back one iron ingot per chain (5/8/7/4)
 - Bucket back to 3 iron ingots
 - Horse armor back to 8 of its material (leather, iron, gold, diamond)
-- Leather from rotten flesh, ender pearl from slime spawn egg, dripstone block from smooth basalt
+- Dripstone block from smooth basalt
 
 Enchantments are lost and damage does not matter. RPack replaces the
-vanilla "nugget from smelting" recipes so they no longer include the items
-above; otherwise two furnace recipes would compete for the same input.
+vanilla "nugget from smelting/blasting" recipes so they only cover nautilus
+armor (which is not craftable); otherwise two furnace recipes would compete
+for the same input.
 
 ## Building
 

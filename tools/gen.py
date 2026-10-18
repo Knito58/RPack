@@ -71,7 +71,6 @@ shaped("chainmail_helmet", ["###", "# #"], {"#": "iron_chain"}, "chainmail_helme
 shaped("chainmail_chestplate", ["# #", "###", "###"], {"#": "iron_chain"}, "chainmail_chestplate", 1, "equipment")
 shaped("chainmail_leggings", ["###", "# #", "# #"], {"#": "iron_chain"}, "chainmail_leggings", 1, "equipment")
 shaped("chainmail_boots", ["# #", "# #"], {"#": "iron_chain"}, "chainmail_boots", 1, "equipment")
-shaped("elytra", ["#g#", "# #"], {"#": "paper", "g": "gold_ingot"}, "elytra", 1, "equipment")
 shaped("spawner", ["###", "###", "###"], {"#": "iron_bars"}, "spawner")
 shaped("lodestone", ["###", "#Q#", "###"], {"#": "stone", "Q": "quartz"}, "lodestone")
 shaped("grass_block", ["#", "D"], {"#": "short_grass", "D": "dirt"}, "grass_block", 1, "building")
@@ -93,23 +92,27 @@ smithing("repair-chipped-anvil", "chipped_anvil", "iron_nugget", "anvil")
 smithing("repair-damaged-anvil1", "damaged_anvil", "iron_nugget", "chipped_anvil")
 smithing("repair-damaged-anvil2", "damaged_anvil", "iron_ingot", "anvil")
 
-# --- furnace (and blast furnace at half the time)
+# --- furnace and blast furnace: tools and armor give back the ingots they cost
 recycle = []
+def recycle_to(name, ingr, item, n):
+    cooking(name, ingr, item, n, n / 10, 100 + n * 10)
+    recycle.append(mc(ingr))
 for metal, ingot, prefix in (("iron", "iron_ingot", "iron"), ("gold", "gold_ingot", "golden")):
-    for piece, n in (("sword", 2), ("boots", 4), ("helmet", 5), ("leggings", 7), ("chestplate", 8)):
-        cooking(f"{n}{metal}_from_{piece}", f"{prefix}_{piece}", ingot, n, n / 10, 100 + n * 10)
-        recycle.append(mc(f"{prefix}_{piece}"))
+    for piece, n in (("sword", 2), ("boots", 4), ("helmet", 5), ("leggings", 7), ("chestplate", 8),
+                     ("pickaxe", 3), ("axe", 3), ("hoe", 2), ("shovel", 1), ("spear", 1)):
+        recycle_to(f"{n}{metal}_from_{piece}", f"{prefix}_{piece}", ingot, n)
+# chainmail is crafted from iron chains here: one ingot back per chain
+for piece, n in (("boots", 4), ("helmet", 5), ("leggings", 7), ("chestplate", 8)):
+    recycle_to(f"{n}iron_from_chainmail_{piece}", f"chainmail_{piece}", "iron_ingot", n)
 cooking("3iron_from_bucket", "bucket", "iron_ingot", 3, 0.3, 130)
 for armor, item in (("iron_horse_armor", "iron_ingot"), ("golden_horse_armor", "gold_ingot"),
                     ("diamond_horse_armor", "diamond"), ("leather_horse_armor", "leather")):
     cooking(armor.replace("golden", "gold").replace("diamond", "dia"), armor, item, 8, 0.8, 180)
     recycle.append(mc(armor))
-cooking("leather-cooking", "rotten_flesh", "leather", 1, 0.1, 100)
-cooking("enderpearl", "slime_spawn_egg", "ender_pearl", 1, 0.1, 200)
 cooking("dripstone", "smooth_basalt", "dripstone_block", 1, 0.1, 200)
 
 # --- vanilla nugget recipes minus the items RPack recycles into ingots,
-# otherwise two furnace recipes compete for the same input
+# otherwise two furnace recipes compete for the same input (only nautilus armor is left)
 for metal in ("iron", "gold"):
     for typ in ("smelting", "blasting"):
         vanilla = json.load(open(os.path.join(VANILLA, f"{metal}_nugget_from_{typ}.json")))

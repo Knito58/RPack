@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": "minecraft:chainmail_chestplate",
+  "result": {
+    "id": "minecraft:iron_ingot",
+    "count": 8
+  },
+  "experience": 0.8,
+  "cookingtime": 180
+}
