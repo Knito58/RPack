@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smithing",
+    "base": {
+        "item": "minecraft:charcoal"
+    },
+    "addition": {
+        "item": "minecraft:charcoal"
+    },
+    "result": {
+        "item": "minecraft:black_dye",
+        "count": 4
+    }
+}

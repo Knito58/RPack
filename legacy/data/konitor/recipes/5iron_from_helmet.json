@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": 
+        {
+            "item": "minecraft:iron_helmet"
+        }
+    ,
+    "result": {
+        "item": "minecraft:iron_ingot",
+		"count": 5,
+		"experience": 0.5,
+		"cookingtime": 150
+    }
+}

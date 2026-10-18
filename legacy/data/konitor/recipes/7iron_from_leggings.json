@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": 
+        {
+            "item": "minecraft:iron_leggings"
+        }
+    ,
+    "result": {
+        "item": "minecraft:iron_ingot",
+		"count": 7,
+		"experience": 0.7,
+		"cookingtime": 170
+    }
+}

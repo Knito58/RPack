@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": 
+        {
+            "item": "minecraft:golden_leggings"
+        }
+    ,
+    "result": {
+        "item": "minecraft:gold_ingot",
+		"count": 7,
+		"experience": 0.7,
+		"cookingtime": 170
+    }
+}
