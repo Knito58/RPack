@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": "#minecraft:mangrove_logs"
+  },
+  "result": {
+    "id": "minecraft:mangrove_slab",
+    "count": 24
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:chipped_anvil",
+  "addition": "minecraft:iron_nugget",
+  "result": {
+    "id": "minecraft:anvil"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "#E#",
+    "###"
+  ],
+  "key": {
+    "#": "minecraft:warped_roots",
+    "E": "minecraft:egg"
+  },
+  "result": {
+    "id": "minecraft:slime_spawn_egg"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "ingredient": "minecraft:golden_chestplate",
+  "result": {
+    "id": "minecraft:gold_ingot",
+    "count": 8
+  },
+  "experience": 0.8,
+  "cookingtime": 90
+}

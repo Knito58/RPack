@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "#Q#",
+    "###"
+  ],
+  "key": {
+    "#": "minecraft:stone",
+    "Q": "minecraft:quartz"
+  },
+  "result": {
+    "id": "minecraft:lodestone"
+  }
+}

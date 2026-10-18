@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    "minecraft:golden_pickaxe",
+    "minecraft:golden_shovel",
+    "minecraft:golden_axe",
+    "minecraft:golden_hoe",
+    "minecraft:golden_spear",
+    "minecraft:golden_nautilus_armor"
+  ],
+  "result": {
+    "id": "minecraft:gold_nugget"
+  }
+}

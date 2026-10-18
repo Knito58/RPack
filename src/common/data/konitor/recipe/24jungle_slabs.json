@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": "#minecraft:jungle_logs"
+  },
+  "result": {
+    "id": "minecraft:jungle_slab",
+    "count": 24
+  }
+}

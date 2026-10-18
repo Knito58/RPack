@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:damaged_anvil",
+  "addition": "minecraft:iron_ingot",
+  "result": {
+    "id": "minecraft:anvil"
+  }
+}

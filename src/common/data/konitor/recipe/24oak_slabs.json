@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": "#minecraft:oak_logs"
+  },
+  "result": {
+    "id": "minecraft:oak_slab",
+    "count": 24
+  }
+}

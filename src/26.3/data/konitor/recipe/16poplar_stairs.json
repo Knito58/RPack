@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": "#minecraft:poplar_logs"
+  },
+  "result": {
+    "id": "minecraft:poplar_stairs",
+    "count": 16
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#L#",
+    "#G#",
+    "###"
+  ],
+  "key": {
+    "#": "minecraft:obsidian",
+    "L": "minecraft:lava_bucket",
+    "G": "minecraft:ghast_tear"
+  },
+  "result": {
+    "id": "minecraft:crying_obsidian",
+    "count": 7
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#",
+    "N"
+  ],
+  "key": {
+    "#": "minecraft:crimson_roots",
+    "N": "minecraft:netherrack"
+  },
+  "result": {
+    "id": "minecraft:crimson_nylium"
+  }
+}

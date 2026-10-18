@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "ingredient": "minecraft:golden_sword",
+  "result": {
+    "id": "minecraft:gold_ingot",
+    "count": 2
+  },
+  "experience": 0.2,
+  "cookingtime": 60
+}

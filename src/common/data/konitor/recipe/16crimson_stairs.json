@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": "#minecraft:crimson_stems"
+  },
+  "result": {
+    "id": "minecraft:crimson_stairs",
+    "count": 16
+  }
+}

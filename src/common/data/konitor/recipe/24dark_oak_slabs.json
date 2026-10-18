@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": "#minecraft:dark_oak_logs"
+  },
+  "result": {
+    "id": "minecraft:dark_oak_slab",
+    "count": 24
+  }
+}
