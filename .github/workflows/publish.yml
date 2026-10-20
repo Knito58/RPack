@@ -1,0 +1,89 @@
+# Builds both jars and uploads them to CurseForge and GitHub Releases.
+# Start it by hand: Actions tab -> Publish -> Run workflow.
+# Needs the repository secret CURSEFORGE_TOKEN (CurseForge author API token).
+name: Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: CurseForge release type
+        type: choice
+        options: [release, beta, alpha]
+        default: release
+      curseforge:
+        description: Upload to CurseForge
+        type: boolean
+        default: true
+      github_release:
+        description: Create the GitHub release
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  CURSEFORGE_PROJECT_ID: "1755858"  # RPack-asamod
+  CF_API: https://minecraft.curseforge.com/api
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          sh build.sh
+          VERSION=$(sed -n 's/^VERSION=//p' build.sh)
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          # The CHANGELOG.md section of this version, without its heading
+          awk -v v="## $VERSION" '$0==v{on=1;next} /^## /{on=0} on' CHANGELOG.md > changelog.md
+          cat changelog.md
+
+      - name: Upload to CurseForge
+        if: inputs.curseforge
+        env:
+          CF_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          RELEASE_TYPE: ${{ inputs.release_type }}
+        run: |
+          curl -sSf -H "X-Api-Token: $CF_TOKEN" "$CF_API/game/version-types" > types.json
+          curl -sSf -H "X-Api-Token: $CF_TOKEN" "$CF_API/game/versions" > versions.json
+          # CurseForge wants its own ids for game versions and loaders
+          id_of() {
+            jq -r --arg name "$1" --arg type "$2" '
+              ([input[] | select(.slug | test($type)) | .id]) as $types
+              | [.[] | select(.name == $name and (.gameVersionTypeID as $t | $types | index($t)))][0].id // empty
+            ' versions.json types.json
+          }
+          FABRIC=$(id_of Fabric '^modloader$')
+          CLIENT=$(id_of Client '^environment$')
+          SERVER=$(id_of Server '^environment$')
+          [ -n "$FABRIC" ] || { echo "No CurseForge id for Fabric"; exit 1; }
+          # Environment (Client/Server) is optional; skip it if CurseForge has no such ids
+          ENV=$(jq -cn --arg c "$CLIENT" --arg s "$SERVER" '[$c, $s] | map(select(. != "") | tonumber)')
+          for JAR in build/rpack-"$VERSION"+*.jar; do
+            MC=${JAR##*+}; MC=${MC%.jar}
+            GV=$(id_of "$MC" '^minecraft-')
+            [ -n "$GV" ] || { echo "No CurseForge id for Minecraft $MC"; exit 1; }
+            META=$(jq -n --rawfile log changelog.md --arg name "RPack $VERSION for $MC" \
+              --arg type "$RELEASE_TYPE" --argjson gv "$GV" --argjson fabric "$FABRIC" \
+              --argjson env "$ENV" '{
+                changelog: $log, changelogType: "markdown", displayName: $name,
+                gameVersions: ([$gv, $fabric] + $env), releaseType: $type,
+                relations: {projects: [{slug: "fabric-api", type: "requiredDependency"}]}
+              }')
+            echo "Uploading $JAR"
+            curl -sS --fail-with-body -H "X-Api-Token: $CF_TOKEN" --form-string "metadata=$META" -F "file=@$JAR" \
+              "$CF_API/projects/$CURSEFORGE_PROJECT_ID/upload-file"
+            echo
+          done
+
+      - name: GitHub release
+        if: inputs.github_release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v$VERSION" build/rpack-"$VERSION"+*.jar \
+            --title "RPack $VERSION" --notes-file changelog.md --target "$GITHUB_SHA"
