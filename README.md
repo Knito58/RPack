@@ -52,3 +52,9 @@ creates `build/rpack-<version>+26.2.jar` and `build/rpack-<version>+26.3.jar`.
 `src/26.3` the rest (blast furnace times are stored differently since 26.3,
 and poplar only exists in 26.3). `tools/gen.py` generated the JSON once and
 is kept for reference. `legacy/` is the original datapack 1.3.1.
+
+## How this mod is made
+
+Version 2.0 is written by Claude AI: the recipes, the build script and the descriptions.
+Konitor decides what goes in and tests every version in game.
+The icon is hand-made by Konitor in GIMP; no images are AI-generated.
