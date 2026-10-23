@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:coal",
+  "addition": "minecraft:coal",
+  "result": {
+    "id": "minecraft:black_dye",
+    "count": 4
+  }
+}
