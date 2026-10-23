@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Smithing table black dye now takes coal as well as charcoal, in any mix (2 pieces → 4 black dye).
+- 36 black dye from 2 coal blocks on the smithing table.
 
 ## 2.0.0
 

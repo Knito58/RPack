@@ -87,6 +87,7 @@ shaped("crying_obsidian", ["#L#", "#G#", "###"], {"#": "obsidian", "L": "lava_bu
 
 # --- smithing table (no template needed)
 smithing("4blackdye", "#coals", "#coals", "black_dye", 4)
+smithing("36blackdye", "coal_block", "coal_block", "black_dye", 36)
 smithing("chain-smithing", "iron_nugget", "iron_nugget", "iron_chain")
 smithing("repair-chipped-anvil", "chipped_anvil", "iron_nugget", "anvil")
 smithing("repair-damaged-anvil1", "damaged_anvil", "iron_nugget", "chipped_anvil")
