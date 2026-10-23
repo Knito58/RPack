@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- New smithing table recipe: 4 black dye from 2 coal (like the charcoal one).
+
 ## 2.0.0
 
 - Now a Fabric mod (needs Fabric API) for Minecraft 26.2 and 26.3, active in every world automatically.
