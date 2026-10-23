@@ -58,4 +58,3 @@ is kept for reference. `legacy/` is the original datapack 1.3.1.
 
 Version 2.0 is written by Claude AI: the recipes, the build script and the descriptions.
 Konitor decides what goes in and tests every version in game.
-The icon is hand-made by Konitor in GIMP; no images are AI-generated.
