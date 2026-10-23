@@ -86,8 +86,7 @@ shaped("pointed_dripstone", ["###", " # ", " # "], {"#": "dripstone_block"}, "po
 shaped("crying_obsidian", ["#L#", "#G#", "###"], {"#": "obsidian", "L": "lava_bucket", "G": "ghast_tear"}, "crying_obsidian", 7, "building")
 
 # --- smithing table (no template needed)
-smithing("4blackdye", "charcoal", "charcoal", "black_dye", 4)
-smithing("4blackdye_from_coal", "coal", "coal", "black_dye", 4)
+smithing("4blackdye", "#coals", "#coals", "black_dye", 4)
 smithing("chain-smithing", "iron_nugget", "iron_nugget", "iron_chain")
 smithing("repair-chipped-anvil", "chipped_anvil", "iron_nugget", "anvil")
 smithing("repair-damaged-anvil1", "damaged_anvil", "iron_nugget", "chipped_anvil")

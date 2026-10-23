@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- New smithing table recipe: 4 black dye from 2 coal (like the charcoal one).
+- Smithing table black dye now takes coal as well as charcoal, in any mix (2 pieces → 4 black dye).
 
 ## 2.0.0
 
