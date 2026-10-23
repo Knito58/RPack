@@ -1,9 +1,9 @@
 # Changelog
 
-## Unreleased
+## 2.0.1
 
-- Smithing table black dye now takes coal as well as charcoal, in any mix (2 pieces → 4 black dye).
-- 40 black dye from 2 coal blocks on the smithing table.
+- Fixed: the black dye recipes were inconsistent. On the smithing table, any 2 coal or charcoal, in any mix, now give 4 black dye.
+- New: 2 coal blocks give 40 black dye on the smithing table.
 
 ## 2.0.0
 
