@@ -24,7 +24,7 @@ Requires **Fabric API**. Builds for Minecraft **26.2** and **26.3**.
 
 **Smithing table** (no template needed)
 
-- 4 black dye from 2 charcoal or 2 coal
+- 4 black dye from 2 coal or charcoal, in any mix
 - Iron chain from 2 iron nuggets
 - Chipped anvil + nugget → anvil; damaged anvil + nugget → chipped anvil; damaged anvil + ingot → anvil
 
