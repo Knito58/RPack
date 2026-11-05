@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:bone_block",
+  "addition": "minecraft:bone_block",
+  "result": {
+    "id": "minecraft:white_dye",
+    "count": 40
+  }
+}
