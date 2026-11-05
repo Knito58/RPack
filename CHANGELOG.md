@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0
+
+- New: 2 bone meal give 4 white dye on the smithing table.
+- New: 2 bone blocks give 40 white dye on the smithing table.
+
 ## 2.0.1
 
 - Fixed: the black dye recipes were inconsistent. On the smithing table, any 2 coal or charcoal, in any mix, now give 4 black dye.

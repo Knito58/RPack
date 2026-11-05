@@ -26,6 +26,8 @@ Requires **Fabric API**. Builds for Minecraft **26.2** and **26.3**.
 
 - 4 black dye from 2 coal or charcoal, in any mix
 - 40 black dye from 2 coal blocks
+- 4 white dye from 2 bone meal
+- 40 white dye from 2 bone blocks
 - Iron chain from 2 iron nuggets
 - Chipped anvil + nugget → anvil; damaged anvil + nugget → chipped anvil; damaged anvil + ingot → anvil
 
